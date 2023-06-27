@@ -52,7 +52,18 @@ This repo is a work in progress, so we appreciate your patience as we figure thi
 <pre><code class="language-bash"><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-2">test</span><span class="hl-1"> </span><span class="hl-3">--filter=frontend</span><br/><br/><span class="hl-4"># or</span><br/><span class="hl-4"># cd apps/frontend</span><br/><span class="hl-4"># yarn test</span>
 </code><button>Copy</button></pre>
 <a id="md:development" class="tsd-anchor"></a><h2><a href="#md:development">Development</a></h2><ul>
-<li>start dev server for all applications</li>
+<li>start redis container for local testing</li>
+</ul>
+<pre><code class="language-bash"><span class="hl-0">docker</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-3">-d</span><span class="hl-1"> </span><span class="hl-3">--name</span><span class="hl-1"> </span><span class="hl-2">redis-stack</span><span class="hl-1"> </span><span class="hl-3">-p</span><span class="hl-1"> </span><span class="hl-5">6379</span><span class="hl-2">:6379</span><span class="hl-1"> </span><span class="hl-3">-p</span><span class="hl-1"> </span><span class="hl-5">8001</span><span class="hl-2">:8001</span><span class="hl-1"> </span><span class="hl-2">redis/redis-stack:latest</span>
+</code><button>Copy</button></pre>
+<blockquote>
+<p>you can switch to different port if you want</p>
+</blockquote>
+<ul>
+<li>start dev server for all applications<blockquote>
+<p>please check your <code>.env</code> before you start, if you don&#39;t known how to set the environment, please contact the team.</p>
+</blockquote>
+</li>
 </ul>
 <pre><code class="language-bash"><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-2">dev</span>
 </code><button>Copy</button></pre>
@@ -244,7 +255,11 @@ callable workflow also can trigger manually by <code>workflow_dispatch</code>.</
 <li><a href="interfaces/BrokenToolCommand.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Broken<wbr/>Tool<wbr/>Command</span></a></li>
 <li><a href="interfaces/BrokenToolHasBeenPlacedEvent.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Broken<wbr/>Tool<wbr/>Has<wbr/>Been<wbr/>Placed<wbr/>Event</span></a></li>
 <li><a href="interfaces/BrokenToolHasBeenRemovedEvent.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Broken<wbr/>Tool<wbr/>Has<wbr/>Been<wbr/>Removed<wbr/>Event</span></a></li>
+<li><a href="interfaces/CreateRoomCommand.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Create<wbr/>Room<wbr/>Command</span></a></li>
+<li><a href="interfaces/CreateRoomEvent.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Create<wbr/>Room<wbr/>Event</span></a></li>
 <li><a href="interfaces/CurrentPlacementQuery.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Current<wbr/>Placement<wbr/>Query</span></a></li>
+<li><a href="interfaces/DrawCommand.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Draw<wbr/>Command</span></a></li>
+<li><a href="interfaces/DrawEvent.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Draw<wbr/>Event</span></a></li>
 <li><a href="interfaces/FixToolCommand.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Fix<wbr/>Tool<wbr/>Command</span></a></li>
 <li><a href="interfaces/GoalCardHasBeenRevealEvent.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Goal<wbr/>Card<wbr/>Has<wbr/>Been<wbr/>Reveal<wbr/>Event</span></a></li>
 <li><a href="interfaces/MapCommand.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Map<wbr/>Command</span></a></li>
@@ -262,7 +277,11 @@ callable workflow also can trigger manually by <code>workflow_dispatch</code>.</
 <li><a href="variables/BrokenToolCommandSchema.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-32-path"></use><use href="#icon-32-text"></use></svg><span>Broken<wbr/>Tool<wbr/>Command<wbr/>Schema</span></a></li>
 <li><a href="variables/BrokenToolHasBeenPlacedEventSchema.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-32-path"></use><use href="#icon-32-text"></use></svg><span>Broken<wbr/>Tool<wbr/>Has<wbr/>Been<wbr/>Placed<wbr/>Event<wbr/>Schema</span></a></li>
 <li><a href="variables/BrokenToolHasBeenRemovedEventSchema.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-32-path"></use><use href="#icon-32-text"></use></svg><span>Broken<wbr/>Tool<wbr/>Has<wbr/>Been<wbr/>Removed<wbr/>Event<wbr/>Schema</span></a></li>
+<li><a href="variables/CreateRoomCommandSchema.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-32-path"></use><use href="#icon-32-text"></use></svg><span>Create<wbr/>Room<wbr/>Command<wbr/>Schema</span></a></li>
+<li><a href="variables/CreateRoomEventSchema.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-32-path"></use><use href="#icon-32-text"></use></svg><span>Create<wbr/>Room<wbr/>Event<wbr/>Schema</span></a></li>
 <li><a href="variables/CurrentPlacementQuerySchema.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-32-path"></use><use href="#icon-32-text"></use></svg><span>Current<wbr/>Placement<wbr/>Query<wbr/>Schema</span></a></li>
+<li><a href="variables/DrawCommandSchema.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-32-path"></use><use href="#icon-32-text"></use></svg><span>Draw<wbr/>Command<wbr/>Schema</span></a></li>
+<li><a href="variables/DrawEventSchema.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-32-path"></use><use href="#icon-32-text"></use></svg><span>Draw<wbr/>Event<wbr/>Schema</span></a></li>
 <li><a href="variables/FixToolCommandSchema.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-32-path"></use><use href="#icon-32-text"></use></svg><span>Fix<wbr/>Tool<wbr/>Command<wbr/>Schema</span></a></li>
 <li><a href="variables/GoalCardHasBeenRevealEventSchema.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-32-path"></use><use href="#icon-32-text"></use></svg><span>Goal<wbr/>Card<wbr/>Has<wbr/>Been<wbr/>Reveal<wbr/>Event<wbr/>Schema</span></a></li>
 <li><a href="variables/MapCommandSchema.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-32-path"></use><use href="#icon-32-text"></use></svg><span>Map<wbr/>Command<wbr/>Schema</span></a></li>
@@ -278,7 +297,11 @@ callable workflow also can trigger manually by <code>workflow_dispatch</code>.</
 <li><a href="functions/createBrokenToolCommand.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>create<wbr/>Broken<wbr/>Tool<wbr/>Command</span></a></li>
 <li><a href="functions/createBrokenToolHasBeenPlacedEvent.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>create<wbr/>Broken<wbr/>Tool<wbr/>Has<wbr/>Been<wbr/>Placed<wbr/>Event</span></a></li>
 <li><a href="functions/createBrokenToolHasBeenRemovedEvent.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>create<wbr/>Broken<wbr/>Tool<wbr/>Has<wbr/>Been<wbr/>Removed<wbr/>Event</span></a></li>
+<li><a href="functions/createCreateRoomCommand.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>create<wbr/>Create<wbr/>Room<wbr/>Command</span></a></li>
+<li><a href="functions/createCreateRoomEvent.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>create<wbr/>Create<wbr/>Room<wbr/>Event</span></a></li>
 <li><a href="functions/createCurrentPlacementQuery.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>create<wbr/>Current<wbr/>Placement<wbr/>Query</span></a></li>
+<li><a href="functions/createDrawCommand.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>create<wbr/>Draw<wbr/>Command</span></a></li>
+<li><a href="functions/createDrawEvent.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>create<wbr/>Draw<wbr/>Event</span></a></li>
 <li><a href="functions/createFixToolCommand.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>create<wbr/>Fix<wbr/>Tool<wbr/>Command</span></a></li>
 <li><a href="functions/createGoalCardHasBeenRevealEvent.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>create<wbr/>Goal<wbr/>Card<wbr/>Has<wbr/>Been<wbr/>Reveal<wbr/>Event</span></a></li>
 <li><a href="functions/createMapCommand.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>create<wbr/>Map<wbr/>Command</span></a></li>
@@ -292,7 +315,11 @@ callable workflow also can trigger manually by <code>workflow_dispatch</code>.</
 <li><a href="functions/isBrokenToolCommand.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>is<wbr/>Broken<wbr/>Tool<wbr/>Command</span></a></li>
 <li><a href="functions/isBrokenToolHasBeenPlacedEvent.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>is<wbr/>Broken<wbr/>Tool<wbr/>Has<wbr/>Been<wbr/>Placed<wbr/>Event</span></a></li>
 <li><a href="functions/isBrokenToolHasBeenRemovedEvent.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>is<wbr/>Broken<wbr/>Tool<wbr/>Has<wbr/>Been<wbr/>Removed<wbr/>Event</span></a></li>
+<li><a href="functions/isCreateRoomCommand.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>is<wbr/>Create<wbr/>Room<wbr/>Command</span></a></li>
+<li><a href="functions/isCreateRoomEvent.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>is<wbr/>Create<wbr/>Room<wbr/>Event</span></a></li>
 <li><a href="functions/isCurrentPlacementQuery.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>is<wbr/>Current<wbr/>Placement<wbr/>Query</span></a></li>
+<li><a href="functions/isDrawCommand.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>is<wbr/>Draw<wbr/>Command</span></a></li>
+<li><a href="functions/isDrawEvent.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>is<wbr/>Draw<wbr/>Event</span></a></li>
 <li><a href="functions/isFixToolCommand.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>is<wbr/>Fix<wbr/>Tool<wbr/>Command</span></a></li>
 <li><a href="functions/isGoalCardHasBeenRevealEvent.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>is<wbr/>Goal<wbr/>Card<wbr/>Has<wbr/>Been<wbr/>Reveal<wbr/>Event</span></a></li>
 <li><a href="functions/isMapCommand.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>is<wbr/>Map<wbr/>Command</span></a></li>
